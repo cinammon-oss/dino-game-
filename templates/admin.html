@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <p>Current Image:</p>
+    <img src="{{ url_for('static', filename=current_image) }}" alt="Current Dinosaur" style="width: 150px;">
+    <br><br>
+    <form action="{{ url_for('admin') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <input type="submit" value="Upload">
+    </form>
+    <p><a href="{{ url_for('game') }}">Go to Game</a></p>
+</body>
+</html>

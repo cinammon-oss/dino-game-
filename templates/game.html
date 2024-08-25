@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+</head>
+
+<body>
+    <div id="game">
+        <div id="ground1" class="ground"></div>
+        <div id="ground2" class="ground"></div>
+        <div id="dino"></div>
+        <div id="obstacle"></div>
+    </div>
+    <p id="score">Score: 0</p>
+    <div id="game-over" class="hidden">
+        <p id="final-score">Your Score: 0</p>
+        <button id="restart-button">Restart</button>
+    </div>
+
+    <!-- Moved dinosaur selection outside of game-over container -->
+    <div id="dino-selection">
+        <img src="{{ url_for('static', filename='uploads/dino1.png') }}" alt="Dino 1" class="dino-icon" onclick="selectDinoImage('dino1.png')">
+        <img src="{{ url_for('static', filename='uploads/dino2.png') }}" alt="Dino 2" class="dino-icon" onclick="selectDinoImage('dino2.png')">
+        <img src="{{ url_for('static', filename='uploads/dino3.png') }}" alt="Dino 3" class="dino-icon" onclick="selectDinoImage('dino3.png')">
+        <img src="{{ url_for('static', filename='uploads/dino4.png') }}" alt="Dino 4" class="dino-icon" onclick="selectDinoImage('dino4.png')">
+        <img src="{{ url_for('static', filename='uploads/dino5.png') }}" alt="Dino 5" class="dino-icon" onclick="selectDinoImage('dino5.png')">
+    </div>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+
+</html>
